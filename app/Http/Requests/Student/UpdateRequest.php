@@ -54,7 +54,6 @@ class UpdateRequest extends FormRequest
             'parents_tel' => [
                 'nullable', 
                 'string', 
-                'digits:9'
             ],
             'location' => 'nullable|string|max:255',
             'should_pay' => 'nullable|numeric|min:0',
