@@ -54,18 +54,7 @@ class UpdateRequest extends FormRequest
             'parents_tel' => [
                 'nullable', 
                 'string', 
-                'digits:9', 
-                // Custom unique check for parents_tel update
-                function ($attribute, $value, $fail) {
-                    if (empty($value)) return;
-                    
-                    $fullPhone = '998' . $value;
-                    $studentId = $this->route('student');
-                    
-                    if (\App\Models\User::where('parents_tel', $fullPhone)->where('id', '!=', $studentId)->exists()) {
-                        $fail('The parents phone number has already been taken.');
-                    }
-                },
+                'digits:9'
             ],
             'location' => 'nullable|string|max:255',
             'should_pay' => 'nullable|numeric|min:0',
