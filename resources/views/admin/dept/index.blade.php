@@ -13,6 +13,7 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
+                    <th>Phone</th>
                     <th>Group</th>
                     <th>Status</th>
                     <th>Actions</th>
@@ -23,6 +24,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td><strong>{{ $student->name }}</strong></td>
+                        <td><strong>{{ $student->phone }}</strong></td>
                         <td>{{$student->studentsGroup()}}</td>
                         <td>
                             @if($student->deptStudent && $student->deptStudent->payed > 0)
