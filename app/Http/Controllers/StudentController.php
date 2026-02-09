@@ -92,6 +92,7 @@ class StudentController extends Controller
                 'parents_tel'  => $request->parents_tel ? '998' . preg_replace('/[^0-9]/', '', $request->parents_tel) : null,
                 'location'     => $request->location,
                 'photo'        => $uploadedFilePath,
+                'status'       => 0,
                 'should_pay'   => (int) str_replace(' ', '', $request->should_pay),
                 'description'  => $request->description,
             ]);
